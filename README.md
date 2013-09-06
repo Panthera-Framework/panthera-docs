@@ -1,0 +1,4 @@
+panthera-docs
+=============
+
+Panthera documentation
