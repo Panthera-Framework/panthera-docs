@@ -1,7 +1,7 @@
 Getting started
 =================
 
-1. Panthera installation
+1. [Panthera installation](https://github.com/Panthera-Framework/panthera-docs/edit/master/src/en/panthera-installation/index.md)
     1. Downloading source files with dependences from GIT
     2. Installation through built-in installator
     3. Repeating installation process
@@ -12,7 +12,7 @@ Getting started
     3. Configuration
     4. Templates
         1. Structure of templates
-        2. Mechanism webrootMerge
+        2. Web root
         3. PHP service
         4. Converted URL adresses
     5. Database service
