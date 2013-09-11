@@ -1,10 +1,10 @@
 Getting started
 =================
 
-1. [Panthera installation](https://github.com/Panthera-Framework/panthera-docs/edit/master/src/en/panthera-installation/index.md)
-    1. [Downloading source files with dependences from GIT](https://github.com/Panthera-Framework/panthera-docs/edit/master/src/en/panthera-installation/index.md#)
-    2. Installation through built-in installator
-    3. Repeating installation process
+1. [Panthera installation](https://github.com/Panthera-Framework/panthera-docs/master/src/english/panthera-installation/index.md)
+    1. [Downloading source files with dependences from GIT](https://github.com/Panthera-Framework/panthera-docs/master/src/english/panthera-installation/index.md#downloading-source-files-with-dependences-from-git)
+    2. [Installation through built-in installator](https://github.com/Panthera-Framework/panthera-docs/master/src/english/panthera-installation/index.md#installation-through-built-in-installator)
+    3. [Repeating installation process](https://github.com/Panthera-Framework/panthera-docs/master/src/english/panthera-installation/index.md#repeating-installation-process)
 
 2. Introduction
     1. Structure of directories
