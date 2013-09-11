@@ -12,7 +12,7 @@ Getting started
     3. Configuration
     4. Templates
         1. Structure of templates
-        2. Mechanism webrootMerge
+        2. Web root
         3. PHP service
         4. Converted URL adresses
     5. Database service
