@@ -1,7 +1,7 @@
 Getting started
 =================
 
-1. Panthera installation
+1. [Panthera installation]((https://github.com/Panthera-Framework/panthera-docs/edit/master/src/en/panthera-installation/index.md))
     1. Downloading source files with dependences from GIT
     2. Installation through built-in installator
     3. Repeating installation process
