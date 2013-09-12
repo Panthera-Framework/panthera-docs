@@ -1,7 +1,7 @@
 Szybki start
 ===============
 
-1. Instalacja Panthery
+1. [Instalacja Panthery](https://github.com/Panthera-Framework/panthera-docs/blob/master/src/polski/instalacja-panthery/index.md)
     1. Pobieranie plików źródłowych z GIT razem z zależnościami
     2. Instalacja poprzez wbudowany instalator
     3.  Powtarzanie procesu instalacji
