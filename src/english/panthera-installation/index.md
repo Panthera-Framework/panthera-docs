@@ -1,7 +1,7 @@
 Panthera installation
 =====================
 
-Project is hosted on github.com, we are using GIT control system version - code is available for everyone from shell with two commands. First for download code, second for donwload dependences with packages manager PHP -  [composer](http://getcomposer.org/).
+Project is hosted on Github, we are using GIT to manage code so it can easily downloaded from shell, dependencies are installable via [composer](http://getcomposer.org/).
 
 1. Downloading source files and dependences from GIT
   
