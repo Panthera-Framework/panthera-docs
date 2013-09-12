@@ -19,9 +19,11 @@ Project is hosted on github.com, we are using GIT control system version - code 
 
   In example-app directory is example application available to install. It's the best moment to change the name, because later it could be a little bit harder.
 
+
 2. Installation through built-in installator
 
   Now it's the time to run installator in web browser. Go to __**/give-me-name/install.php**__, if installator return message about absence possibility to write configuration, we must give appropiate permissions for all directory with WWW content. It's needed, because every module of Panthera must have possibility to write over there in update destination, installation new modules or change site content.
+
 
 3. Repeating installation process
 
