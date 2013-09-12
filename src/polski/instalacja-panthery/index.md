@@ -19,12 +19,12 @@ Projekt hostowany jest w serwisie github.com, używamy systemu kontroli wersji G
   W katalogu example-app znajduje się przykładowa aplikacja dostępna do zainstalowania, jest to zdecydowanie najlepszy moment aby zmienić jej nazwę, ponieważ w dalszym etapie rozwoju aplikacji może być to nieco trudniejsze.
 
 2. Instalacja poprzez wbudowany instalator
-  Teraz przyszedł czas na uruchomienie instalatora w przeglądarce. Przechodzimy na stronę /nazwij-mnie/install.php, jeśli instalator zwrócił komunikat o braku możliwości zapisu konfiguracji musimy nadać poprawne uprawnienia całemu katalogowi z zawartością strony WWW. Konieczne jest to aby każdy moduł Panthery miał prawa do zapisu w celach aktualizacji treści strony czy instalacji nowych modułów.
+  Teraz przyszedł czas na uruchomienie instalatora w przeglądarce. Przechodzimy na stronę **/nazwij-mnie/install.php**, jeśli instalator zwrócił komunikat o braku możliwości zapisu konfiguracji musimy nadać poprawne uprawnienia całemu katalogowi z zawartością strony WWW. Konieczne jest to aby każdy moduł Panthery miał prawa do zapisu w celach aktualizacji treści strony czy instalacji nowych modułów.
 
 3. Powtarzanie procesu instalacji
 
   Z różnych powodów możemy czasami potrzebować powtórzyć proces instalacji - na przykład może on uprościć przenoszenie aplikacji na inny serwer.
-  W tym celu kasujemy wszystkie pliki z katalogu installer, który znajduje się w głownym katalogu aplikacji oraz tworzymy zmienną konfiguracyjną "requires_instalation" z wartością True oraz "preconfigured" z wartością False.
+  W tym celu kasujemy wszystkie pliki z katalogu **installer**, który znajduje się w głownym katalogu aplikacji oraz tworzymy zmienną konfiguracyjną "**__requires_instalation__**" z wartością **True** oraz "**__preconfigured__**" z wartością **False**.
 
-  Możemy też całkowicie usunąć plik app.php, spowoduje to całkowite usunięcie jakiejkolwiek konfiguracji aplikacji.
+  Możemy też całkowicie usunąć plik **app.php**, spowoduje to **całkowite usunięcie** jakiejkolwiek konfiguracji aplikacji.
   Następnie możemy standardowo uruchomić instalator z poziomu przeglądarki WWW.

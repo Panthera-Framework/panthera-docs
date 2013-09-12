@@ -2,9 +2,9 @@ Szybki start
 ===============
 
 1. [Instalacja Panthery](https://github.com/Panthera-Framework/panthera-docs/blob/master/src/polski/instalacja-panthery/index.md)
-    1. Pobieranie plików źródłowych z GIT razem z zależnościami
-    2. Instalacja poprzez wbudowany instalator
-    3.  Powtarzanie procesu instalacji
+    1. [Pobieranie plików źródłowych z GIT razem z zależnościami](https://github.com/Panthera-Framework/panthera-docs/blob/master/src/polski/instalacja-panthery/index.md)
+    2. [Instalacja poprzez wbudowany instalator](https://github.com/Panthera-Framework/panthera-docs/blob/master/src/polski/instalacja-panthery/index.md)
+    3. [Powtarzanie procesu instalacji](https://github.com/Panthera-Framework/panthera-docs/blob/master/src/polski/instalacja-panthery/index.md)
 
 2. Wprowadzenie
     1. Struktura katalogów
