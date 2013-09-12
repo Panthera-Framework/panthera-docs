@@ -7,10 +7,10 @@ Szybki start
     3. [Powtarzanie procesu instalacji](https://github.com/Panthera-Framework/panthera-docs/blob/master/src/polski/instalacja-panthery/index.md)
 
 2. Wprowadzenie
-    1. Struktura katalogów
+    1. [Struktura katalogów](https://github.com/Panthera-Framework/panthera-docs/blob/master/src/polski/wprowadzenie/struktura-katalogow.md)
     2. Front controllery
-    3.  Konfiguracja
-    4.  Szablony
+    3. Konfiguracja
+    4. Szablony
         1. Struktura szablonów
         2. Mechanizm webrootMerge
         3. Obsługa w PHP
