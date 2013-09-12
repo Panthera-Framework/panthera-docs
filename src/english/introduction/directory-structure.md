@@ -16,7 +16,7 @@ alios: index.php, _ajax.php whether install.php
 
 To get full path to main directory of appliaction you need to read value of variable *SITE_DIR*.
 
-```
+```php
 php> var_dump(SITE_DIR);
 string(42) "/home/myuser/public_html"
 ```
