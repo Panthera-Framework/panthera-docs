@@ -2,6 +2,10 @@
     "files": {
         "struktura-katalogow": {
             "title": "Struktura katalogów"
+        },
+        
+        "front-controllers": {
+            "title": "Front controllery"
         }
     }
 }

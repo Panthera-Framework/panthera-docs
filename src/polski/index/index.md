@@ -8,7 +8,7 @@ Szybki start
 
 2. Wprowadzenie
     1. [Struktura katalogów](https://github.com/Panthera-Framework/panthera-docs/blob/master/src/polski/wprowadzenie/struktura-katalogow.md)
-    2. Front controllery
+    2. [Front controllery](https://github.com/Panthera-Framework/panthera-docs/blob/master/src/polski/wprowadzenie/front-controllery.md)
     3. Konfiguracja
     4. Szablony
         1. Struktura szablonów
