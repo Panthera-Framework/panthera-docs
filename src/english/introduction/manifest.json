@@ -2,6 +2,10 @@
     "files": {
         "directory-structure": {
             "title": "Directory structure"
+        },
+        
+        "front-controllers": {
+            "title": "Front controllers"
         }
     }
 }
