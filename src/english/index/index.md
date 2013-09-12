@@ -7,7 +7,7 @@ Getting started
     3. [Repeating installation process](https://github.com/Panthera-Framework/panthera-docs/blob/master/src/english/panthera-installation/index.md#repeating-installation-process)
 
 2. Introduction
-    1. Structure of directories
+    1. [Structure of directories](https://github.com/Panthera-Framework/panthera-docs/blob/master/src/english/introduction/directory-structure.md)
     2. Front controllers
     3. Configuration
     4. Templates
