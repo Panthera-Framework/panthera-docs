@@ -16,3 +16,38 @@ All Panthera templates are stored in `/lib/templates` and `/content/templates`. 
         <tr><td>config.json</td><td>Meta file, describes main template file, mobile and tablet template</td></tr>
         <tr><td>thumbnail.png</td><td>Thumbnail to display in Admin Panel</td></tr>
 </table>
+
+## Web root
+
+Template webroot directory contains all files that may be copied to application root directory (directory where are placed public files like index.php).
+Best practice is to keep this directory clean, so the CSS styles should be in their "css" directory, javascript and images also should be separated.
+
+## Practical usage
+
+Basic usage of template system is to assign variables and just... display it. But of course in Panthera we have scripts, styles, meta tags management.
+
+```php
+$panthera -> template -> setTitle('Wow, this site has title, but i didn\'t use any title tag yet...');
+$panthera -> template -> assign('text', 'hello :-)');
+$panthera -> template -> display('text_demo.tpl');
+```
+
+text_demo.tpl
+
+```html
+<!DOCTYPE html>
+<html>
+    <head>
+    {$site_header}
+    </head>
+    
+    <body>
+    {$text|strtolower}<br>
+    "Yes" in current language: {function="localize('Yes')}
+    </body>
+</html>
+```
+
+### Environment
+
+There is a very useful variable that is used in every template file - it's called `{$PANTHERA_URL}` and is pointing directly to URL to your website's main directory.
