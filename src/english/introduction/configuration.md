@@ -6,7 +6,9 @@ The first one is placed as hardcoded PHP array in app.php that is automaticaly g
 There is also an overlay that covers array from app.php and adds new variables.
 Overlay is placed in SQLite or MySQL database and is divided into sections to avoid loading thousands of unneeded variables.
 
-``php
+###Example app.php
+
+```php
 $config = array (
   'build_missing_tables' => true,
   'db_socket' => 'mysql',
@@ -25,4 +27,96 @@ $config = array (
   'db_host' => 'localhost',
   'db_name' => 'example
 );
-``
+```
+
+### Understanding overlay
+
+Everything is stored in config_overlay database table. Every key has value, type and section (which is optional but recommended).
+Value can be everything - a string, array, integer. To increase performance we are not serializing integers and strings so this is the reason
+why we should provide type name manually.
+
+Example below will create a variable called "diet" with default value "vegetarian" which is string type.
+
+```php
+$panthera -> config -> setKey('diet', 'vegetarian', 'string');
+var_dump($panthera -> config -> getKey('diet'));
+```
+
+<table>
+    <tr>
+        <td>id</td>
+        <td>key</td>
+        <td>value</td>
+        <td>type</td>
+        <td>section</td>
+    </tr>
+    
+    <tr>
+        <td>1</td>
+        <td>diet</td>
+        <td>vegetarian</td>
+        <td>string</td>
+        <td></td>
+    </tr>
+</table>
+
+#### Data types
+<table>
+    <tr>
+        <td>int</td>
+        <td>string</td>
+        <td>bool</td>
+        <td>e-mail</td>
+        <td>url</td>
+        <td>ip</td>
+        <td>regexp</td>
+        <td>array</td>
+        <td>json</td>
+    </tr>
+</table>
+
+#### Sections
+
+Sections are groups of variables that are loaded only on demand. It's recommended to group variables into sections to avoid loading
+huge amount of data at once.
+
+```php
+$panthera -> config -> setKey('dash.maxItems', 16, 'int', 'dash');
+$panthera -> config -> loadOverlay('dash');
+var_dump($panthera -> config -> getKEy('dash.maxItems'));
+```
+
+<table>
+    <tr>
+        <td>id</td>
+        <td>key</td>
+        <td>value</td>
+        <td>type</td>
+        <td>section</td>
+    </tr>
+    
+    <tr>
+        <td>1</td>
+        <td>dash.maxItems</td>
+        <td>16</td>
+        <td>int</td>
+        <td>dash</td>
+    </tr>
+</table>
+
+## Default values
+
+There is no need to create complicated code to assign default values to variables.
+When you are reading variable first time and it does not exists it can be created automaticaly, it's very easy.
+
+```php
+$panthera -> config -> getKey('dash.maxItems', 16, 'int', 'dash'); # looks like setKey, huh? It's get + set!
+```
+
+So, if `dash.maxItems` never existed before it will be created with default "16" value of type "int" in "dash" section.
+Sounds easy and practical? It's Panthera, here we are.
+
+## Cache support on global section
+
+For power users looking for extra performance we created possibility to store config_overlay copy in cache (eg. in RAM memory cache like Memcached)
+so no database query will be performed. Only one condition must be met - cache and varCache must be configured in app.php, not in config_overlay :-)
