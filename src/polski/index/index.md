@@ -19,3 +19,13 @@ Szybki start
     6. Pamięć podręczna cache
     7. Języki i ich obsługa
     8. Zarządzanie użytkownikami oraz grupami
+
+3. Tworzenie konsolowej aplikacji Panthery z wykorzystaniem pantheraCLI
+
+    1. Szkielet aplikacji z przykładem "Hello World"
+    2. Wprowadzanie argumentów
+    3. Pobieranie informacji od użytkownika
+    4. Zapisywanie w pamięci cache sygnałów systemu operacyjnego
+    5. Kolorowanie takstu
+    6. Rysowanie tabel z użyciem texttable
+    7. Konsola interaktywna
