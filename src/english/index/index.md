@@ -19,3 +19,12 @@ Getting started
     6. Cache memory
     7. Languages
     8. Management of users and groups
+
+3. Creating Panthera shell application using pantheraCLI
+    1. Application skeleton with Hello World example
+    2. Handling parsed arguments
+    3. Capturing user input
+    4. Catching operating system singals
+    5. Using colored text
+    6. Drawing tables using texttable toolkit
+    7. Creating interactive console
