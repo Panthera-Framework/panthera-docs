@@ -83,7 +83,7 @@ huge amount of data at once.
 ```php
 $panthera -> config -> setKey('dash.maxItems', 16, 'int', 'dash');
 $panthera -> config -> loadOverlay('dash');
-var_dump($panthera -> config -> getKEy('dash.maxItems'));
+var_dump($panthera -> config -> getKey('dash.maxItems'));
 ```
 
 <table>
