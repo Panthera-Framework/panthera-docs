@@ -9,7 +9,7 @@ Getting started
 2. Introduction
     1. [Structure of directories](https://github.com/Panthera-Framework/panthera-docs/blob/master/src/english/introduction/directory-structure.md)
     2. [Front controllers](https://github.com/Panthera-Framework/panthera-docs/blob/master/src/english/introduction/front-controllers.md)
-    3. Configuration
+    3. [Configuration](https://github.com/Panthera-Framework/panthera-docs/blob/master/src/english/introduction/configuration.md)
     4. Templates
         1. Structure of templates
         2. Web root
