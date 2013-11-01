@@ -15,7 +15,7 @@ Getting started
         2. [Web root](https://github.com/Panthera-Framework/panthera-docs/blob/master/src/english/introduction/templates.md#web-root)
         3. [Practical usage](https://github.com/Panthera-Framework/panthera-docs/blob/master/src/english/introduction/templates.md#practical-usage)
         4. [Environment](https://github.com/Panthera-Framework/panthera-docs/blob/master/src/english/introduction/templates.md#environment)
-    5. Database service
+    5. Databases
     6. Cache memory
     7. Languages
     8. Management of users and groups
