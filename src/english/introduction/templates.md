@@ -43,10 +43,12 @@ text_demo.tpl
     
     <body>
     {$text|strtolower}<br>
-    "Yes" in current language: {function="localize('Yes')}
+    "Yes" in current language: {function="localize('Yes')"}
     </body>
 </html>
 ```
+
+For more syntax examples please visit [RainTPL official website](http://www.raintpl.com/Documentation/). 
 
 ### Environment
 
