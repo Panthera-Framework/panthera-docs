@@ -28,7 +28,7 @@ Basic usage of template system is to assign variables and just... display it. Bu
 
 ```php
 $panthera -> template -> setTitle('Wow, this site has title, but i didn\'t use any title tag yet...');
-$panthera -> template -> assign('text', 'hello :-)');
+$panthera -> template -> push('text', 'hello :-)');
 $panthera -> template -> display('text_demo.tpl');
 ```
 
