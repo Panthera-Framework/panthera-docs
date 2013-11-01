@@ -42,8 +42,8 @@ In Cache slot there should be stored elements that needs ultra-fast performance,
 
 <table>
     <tr>
-        <td>varCache</td>
-        <td>cache</td>
+        <td><b>varCache</b></td>
+        <td><b>cache</b></td>
     </tr>
     
     <tr>
@@ -63,10 +63,10 @@ Example configuration (config_overlay - can be set via $panthera -> config -> se
 
 <table>
     <tr>
-        <td>key</td>
-        <td>value</td>
-        <td>type</td>
-        <td>section</td>
+        <td><b>key</b></td>
+        <td><b>value</b></td>
+        <td><b>type</b></td>
+        <td><b>section</b></td>
     </tr>
     
     <tr>
@@ -83,3 +83,27 @@ Example configuration (config_overlay - can be set via $panthera -> config -> se
         <td></td>
     </tr>
 </table>
+
+## Practical example of usage
+
+In langtool - translation editor for Panthera Framework we have automatic searching for missing translations, it needs to scan all files in /content and /lib directories
+to find and parse them, it usually takes ~3 seconds so it can't be executed every page refresh. Langtool is executing research only once, and then all results are stored in cache memory
+and every page refresh only results are grabbed from cache, and if cache will expire or is empty it will be regenerated - files will be scanned and results will be saved to cache.
+
+```php
+if ($panthera->cache)
+{
+    if ($panthera -> cache -> exists('results-of-heavy-job'))
+    {
+        $results = $panthera -> cache -> get('results-of-heavy-job');
+    }
+}
+
+if (!isset($results))
+{
+     $results = doAHeavyJobThatWillTookAbout10Seconds();
+     
+     if ($panthera->cache)
+         $panthera -> cache -> set('results-of-heavy-job', $results, 86400); // 1 day in seconds
+}
+```
