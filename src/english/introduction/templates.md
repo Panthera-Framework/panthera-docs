@@ -29,6 +29,11 @@ Basic usage of template system is to assign variables and just... display it. Bu
 ```php
 $panthera -> template -> setTitle('Wow, this site has title, but i didn\'t use any title tag yet...');
 $panthera -> template -> push('text', 'hello :-)');
+$panthera -> template -> push('fruits', array(
+    1 => 'banana',
+    2 => 'apple',
+    3 => 'strawberry'
+);
 $panthera -> template -> display('text_demo.tpl');
 ```
 
@@ -43,7 +48,14 @@ text_demo.tpl
     
     <body>
     {$text|strtolower}<br>
-    "Yes" in current language: {function="localize('Yes')"}
+    "Yes" in current language: {function="localize('Yes')"}<br>
+    
+    <ul>
+    {loop="$fruits"}
+    <li>#{$key} - {$value}</li>
+    {/loop}
+    </ul>
+    
     </body>
 </html>
 ```
