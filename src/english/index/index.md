@@ -10,11 +10,11 @@ Getting started
     1. [Structure of directories](https://github.com/Panthera-Framework/panthera-docs/blob/master/src/english/introduction/directory-structure.md)
     2. [Front controllers](https://github.com/Panthera-Framework/panthera-docs/blob/master/src/english/introduction/front-controllers.md)
     3. [Configuration](https://github.com/Panthera-Framework/panthera-docs/blob/master/src/english/introduction/configuration.md)
-    4. Templates
-        1. Structure of templates
-        2. Web root
-        3. PHP service
-        4. Converted URL adresses
+    4. [Templates](https://github.com/Panthera-Framework/panthera-docs/blob/master/src/english/introduction/templates.md)
+        1. [Structure of templates](https://github.com/Panthera-Framework/panthera-docs/blob/master/src/english/introduction/templates.md#structure-of-templates)
+        2. [Web root](https://github.com/Panthera-Framework/panthera-docs/blob/master/src/english/introduction/templates.md#web-root)
+        3. [Practical usage](https://github.com/Panthera-Framework/panthera-docs/blob/master/src/english/introduction/templates.md#practical-usage)
+        4. [Environment](https://github.com/Panthera-Framework/panthera-docs/blob/master/src/english/introduction/templates.md#environment)
     5. Database service
     6. Cache memory
     7. Languages
