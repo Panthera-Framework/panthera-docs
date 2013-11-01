@@ -129,3 +129,21 @@ In cases when data in any column can't be duplicated, eg. generated API keys we 
 // generateRandomString will example output a string "GbE5Bf" and when createUniqueData() will find out that there is already such value in selected column it will search for GbE5Bf1, GbE5Bf2, ..., GbE5Bf10
 $check = $panthera -> db -> createUniqueData('apiserver', 'key', generateRandomString(6));
 ```
+
+## Database templates and autoloader
+
+Every table schema can be saved into template in `/content/database/templates` or `/lib/database/templates` directory. SQLite3 templates are stored in a `sqlite3` subdirectory.
+If `build_missing_tables` configuration variable is enabled in app.php every missing table will be automaticaly imported from previously generated template (if avaliable).
+
+Example of MySQL schema template:
+
+```
+DROP TABLE IF EXISTS `{$db_prefix}var_cache`;
+
+CREATE TABLE `{$db_prefix}var_cache` (
+  `var` varchar(128) NOT NULL,
+  `value` TEXT NOT NULL,
+  `expire` int(20) NOT NULL,
+  UNIQUE KEY `var` (`var`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+```
