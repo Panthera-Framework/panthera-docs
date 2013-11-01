@@ -62,6 +62,8 @@ $values = array(
 $query = $panthera -> db -> buildInsertString($values, True, 'varcache');
 
 var_dump($query);
+
+# $panthera -> db -> query($query['query'], $query['values']);
 ```
 
 ### Updating existing data
@@ -77,4 +79,22 @@ $values = array (
 $query = $panthera -> db -> buildUpdateString($values, array('name'));
 
 var_dump($query);
+
+# $panthera -> db -> query($query['query'], $query['values']);
+
+```
+
+### Select and Delete
+
+In most of select and delete clauses there is a where clause that can be also easily generated.
+
+```php
+$where = new whereClause;
+$where -> add('', 'login', '=', 'user74838');
+$where -> add('AND', 'banned', '=', 0);
+$show = $where->show();
+
+$query = 'SELECT * FROM `{$db_prefix}users` WHERE ' .$show[0];
+
+# $panthera -> db -> query($query, $show[1]);
 ```
