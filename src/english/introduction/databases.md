@@ -64,7 +64,7 @@ $query = $panthera -> db -> buildInsertString($values, True, 'varcache');
 var_dump($query);
 ```
 
-## Updating existing data
+### Updating existing data
 
 ```php
 $values = array (
