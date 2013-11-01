@@ -34,3 +34,52 @@ Panthera supports many caching systems that are divided by architecture and perf
         <td>bad</td>
     </tr>
 </table>
+
+## Configuration
+
+There are two caching slots - `cache` and `varCache`. varCache should be used to store little, non-massive elements.
+In Cache slot there should be stored elements that needs ultra-fast performance, it can't be a database type cache.
+
+<table>
+    <tr>
+        <td>varCache</td>
+        <td>cache</td>
+    </tr>
+    
+    <tr>
+        <td>Simple data</td>
+        <td>Massive storage of any data</td>
+    </tr>
+    
+    <tr>
+        <td>Can be even a database</td>
+        <td>Must be a extra responsive caching system</td>
+    </tr>
+</table>
+
+If you have access to a quick cache eg. APC or Memcached use it in both slots, avoid using slower caching systems in any slots.
+
+Example configuration (config_overlay - can be set via $panthera -> config -> setKey()):
+
+<table>
+    <tr>
+        <td>key</td>
+        <td>value</td>
+        <td>type</td>
+        <td>section</td>
+    </tr>
+    
+    <tr>
+        <td>varcache_type</td>
+        <td>apc</td>
+        <td>string</td>
+        <td></td>
+    </tr>
+    
+    <tr>
+        <td>cache_type</td>
+        <td>apc</td>
+        <td>string</td>
+        <td></td>
+    </tr>
+</table>
