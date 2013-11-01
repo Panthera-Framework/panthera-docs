@@ -84,7 +84,7 @@ var_dump($query);
 
 ```
 
-### Select and Delete
+### Select and Delete (whereClause class)
 
 In most of select and delete clauses there is a where clause that can be also easily generated.
 
@@ -92,6 +92,26 @@ In most of select and delete clauses there is a where clause that can be also ea
 $where = new whereClause;
 $where -> add('', 'login', '=', 'user74838');
 $where -> add('AND', 'banned', '=', 0);
+$show = $where->show();
+
+$query = 'SELECT * FROM `{$db_prefix}users` WHERE ' .$show[0];
+
+# $panthera -> db -> query($query, $show[1]);
+```
+
+## Grouping whereClause statements
+
+Sometimes we have to add more a little bit more complicated statements like (`login` = "test" AND `banned` = 0) AND (`lastlogged` > 3232323 OR `lastlogin` = 0)
+Every statement can be grouped, eg. (`login` = "test" AND `banned` = 0) - first statement and the second (`lastlogged` > 3232323 OR `lastlogin` = 0)
+
+```php
+$where = new whereClause;
+$where -> add('', 'login', '=', 'test', 1);
+$where -> add('AND', 'banned', '=', 0, 1);
+
+$where -> setGroupStatement(2, 'AND');
+$where -> add('', 'lastlogged', '>', 3232323, 2);
+$where -> add('OR', 'lastlogged', '=', 0, 2);
 $show = $where->show();
 
 $query = 'SELECT * FROM `{$db_prefix}users` WHERE ' .$show[0];
