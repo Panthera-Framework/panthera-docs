@@ -118,3 +118,12 @@ $query = 'SELECT * FROM `{$db_prefix}users` WHERE ' .$show[0];
 
 # $panthera -> db -> query($query, $show[1]);
 ```
+
+## Generating unique column data
+
+In cases when data in any column can't be duplicated, eg. generated API keys we can use createUniqueData() function.
+
+```php
+// generateRandomString will example output a string "GbE5Bf" and when createUniqueData() will find out that there is already such value in selected column it will search for GbE5Bf1, GbE5Bf2, ..., GbE5Bf10
+$check = $panthera -> db -> createUniqueData('apiserver', 'key', generateRandomString(6));
+```
