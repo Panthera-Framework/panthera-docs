@@ -116,6 +116,8 @@ $show = $where->show();
 
 $query = 'SELECT * FROM `{$db_prefix}users` WHERE ' .$show[0];
 
+var_dump($query);
+
 # $panthera -> db -> query($query, $show[1]);
 ```
 
