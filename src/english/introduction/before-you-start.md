@@ -68,7 +68,7 @@ include 'content/app.php'; // Panthera Framework + configuration
 
 if ($_SERVER['REMOTE_ADDR'] != '127.0.0.1')
 {
-    print("Only localhost allowed.');
+    print("Only localhost allowed.");
     exit;
 }
 
