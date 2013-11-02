@@ -188,3 +188,51 @@ CREATE TABLE `{$db_prefix}var_cache` (
   UNIQUE KEY `var` (`var`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 ```
+
+# Data objects - pantheraFetchDB
+
+`pantheraFetchDB` is a class that is able to turn database record into editable PHP object.
+
+## Turning table into object
+
+To allow turning database records into objects *you have to create a class* that extends `pantheraFetchDB`.
+
+```php
+class panel extends pantheraFetchDB
+{
+    protected $_tableName = 'panels'; // here is table name without prefix
+    protected $_idColumn = 'id'; // `id` column of this table
+    protected $_constructBy = array('id', 'array', 'title'); // allow constructing by `id` and `title` columns and using array of values
+}
+```
+
+Above example is very simple, we are defining table name, it's unique `id` column and list of columns that can be used to construct object by.
+`array` is not just a column, it's a method of constructing object. With `array` method you can construct object by just giving an array of all columns and values. It's very helpful when you are doing a massive select on a table and then constructing objects by just array of values you got from database.
+
+```php
+$panel = new panel('id', 1);
+
+// or
+$panel = new panel('title', 'This is a test panel');
+
+// and by array
+$q = $panthera -> db -> query('SELECT * FROM `{$db_prefix}panels` WHERE `id` = 1');
+$data = $q -> fetch(PDO::FETCH_ASSOC);
+
+$panel = new panel('array', $data);
+
+var_dump($panel -> exists());
+```
+
+#### Checking if object exists
+
+Very important thing in `pantheraFetchDB` is to check if object exists. There is a special method to do this.
+
+```php
+if ($panel -> exists())
+{
+    // do something
+}
+```
+
+If we don't check if the object was initialized correctly we may get a critical error or unexpected results.
