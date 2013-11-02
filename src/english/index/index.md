@@ -29,3 +29,7 @@ Getting started
     5. Using colored text
     6. Drawing tables using texttable toolkit
     7. Creating interactive console
+    8. Massive data parsing with pantheraWorker
+
+4. Base libraries
+    1. httplib - HTTP connections
