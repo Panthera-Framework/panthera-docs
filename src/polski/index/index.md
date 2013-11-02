@@ -15,8 +15,8 @@ Szybki start
         2. [Mechanizm webrootMerge](https://github.com/Panthera-Framework/panthera-docs/blob/master/src/polski/wprowadzenie/szablony.md#mechanizm-webrootmerge)
         3. [Obsługa w PHP](https://github.com/Panthera-Framework/panthera-docs/blob/master/src/polski/wprowadzenie/szablony.md#obsluga-w-php)
         4. [Przetworzone adresy URL](https://github.com/Panthera-Framework/panthera-docs/blob/master/src/polski/wprowadzenie/szablony.md#obsluga-w-php)
-    5. Obsługa baz danych
-    6. Pamięć podręczna cache
+    5. [Bazy danych](https://github.com/Panthera-Framework/panthera-docs/blob/master/src/polish/wprowadzenie/baza-danych.md)
+    6. [Zarządzanie cache](https://github.com/Panthera-Framework/panthera-docs/blob/master/src/polish/wprowadzenie/cache.md)
     7. Języki i ich obsługa
     8. Zarządzanie użytkownikami oraz grupami
 
