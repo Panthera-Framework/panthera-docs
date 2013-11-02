@@ -237,3 +237,26 @@ if ($panel -> exists())
 ```
 
 If we don't check if the object was initialized correctly we may get a critical error or unexpected results.
+
+#### Getting array of objects eg. list of users
+
+Here is an example:
+
+```php
+$by = new whereClause;
+$by -> add('', 'login', '=', 'Jan');
+
+// or by array (but this includes only "AND" operators in SQL query)
+# $by = array('login' => 'Jan');
+
+$rows = $panthera -> db -> getRows('users', $by, 10, 0, 'pantheraUser', 'id', 'DESC');
+
+// arguments
+// 'users' - it will search in `{$db_prefix}users` table
+// $by - where clause eg. `profile_picture` != ''
+// 10 - SQL limit (show only 10 users)
+// 0 - offset (start from this position)
+// 'pantheraUser' - return results as object of this class (try to construct by `array` method)
+// 'id' - column to order by
+// 'DESC' - sorting direction
+```
