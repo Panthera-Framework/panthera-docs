@@ -78,7 +78,7 @@ pa_exit(); // just in case, this will finish all pending processes like saving d
 ?>
 ```
 
-Isn't it really compliated, it's just a bit of structural programming using fully objective framework you can learn to use by reading our manual or generated documentation, or just reading the code :-)
+It isn't really complicated, it's just a bit of structural programming using fully objective framework you can learn to use by reading our manual or generated documentation, or just reading the code :-)
 
 ##  Default front controllers built-in Panthera
 
