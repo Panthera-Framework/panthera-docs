@@ -12,14 +12,14 @@ Example configuration:
 
 <table>
     <tr>
-        <td>*db_socket*</td>
-        <td>*db_file*</td>
-        <td>*db_host*</td>
-        <td>*db_userame*</td>
-        <td>*db_name*</td>
-        <td>*db_password*</td>
-        <td>*db_autocommit*</td>
-        <td>*db_prefix*</td>
+        <td><b>db_socket</b></td>
+        <td><b>db_file</b></td>
+        <td><b>db_host</b></td>
+        <td><b>db_userame</b></td>
+        <td><b>db_name</b></td>
+        <td><b>db_password</b></td>
+        <td><b>db_autocommit</b></td>
+        <td><b>db_prefix</b></td>
     </tr>
     
     <tr>
