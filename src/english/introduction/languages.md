@@ -32,7 +32,7 @@ Untranslated strings are strings placed inside of PHP or template code in applic
 Example:
 
 ```html
-<div class="body">{function="localize('Welcome to my first website based on Panthera Framework', 'welcome');"}</div>
+<div class="body">{function="localize('Welcome to my first website based on Panthera Framework', 'welcome')"}</div>
 ```
 
 In above exapmle there is one untranslated string - "Welcome to my first website based on Panthera", we are going to translate it to Deutsh.
@@ -46,3 +46,14 @@ $domain -> save();
 $panthera -> locale -> setLocale('deutsh');
 var_dump(localize('Welcome to my first website based on Panthera Framework', 'welcome'));
 ```
+
+You can also use langtool from Admin Panel to translate strings.
+
+## Translating strings containing dynamic data
+
+```html
+{$user="John"}
+<div class="body">{function="slocalize('Hello %s and welcome to my application based on Panthera Framework!', 'welcome', $user)"}</div>
+```
+
+The only one diffirence is in function name - it's slocalize, not localize. And of course there must be passed argument after domain name that will be a string or a number.
