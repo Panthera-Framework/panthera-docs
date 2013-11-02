@@ -192,6 +192,7 @@ CREATE TABLE `{$db_prefix}var_cache` (
 # Data objects - pantheraFetchDB
 
 `pantheraFetchDB` is a class that is able to turn database record into editable PHP object.
+Please note that all objects based on this class supports caching that improves overall performance, but can create possible issues if used without enough knowledge.
 
 ## Turning table into object
 
