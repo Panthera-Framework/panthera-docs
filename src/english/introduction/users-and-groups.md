@@ -65,9 +65,17 @@ $u -> acl -> save();
 As `pantheraUser` is a `pantheraFetchDB` based class it inherits interface that allows modyfing user data by setting class variables of created object.
 
 ```php
-$u -> full_name = 'Jan Kowalski;
+$u -> full_name = 'Jan Kowalski';
 $u -> profile_picture = 'http://example.com/example.jpg';
 $u -> save();
 ```
 
 Above example is just directly editing `full_name` and `profile_picture` columns in SQL database for selected user.
+
+##### Get user's avatar
+
+Returns URL address of user's avatar if any, if not it returns link to default avatar.
+
+```php
+var_dump($u -> getAvatar());
+```
