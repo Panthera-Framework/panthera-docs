@@ -4,6 +4,47 @@ Databases
 We use PHP Data Objects (PDO) to handle database connections. Every result is returned as PDO object, so if you have already any experience with
 this library you should'nt have any problem with learning how `pantheraDB` works.
 
+## Configuration
+
+Database configuration is placed in `app.php`. Currently Panthera supports SQLite3 and MySQL sockets through PDO - if you are interested in porting Panthera to other database type you are welcome to make a pull request.
+
+Example configuration:
+
+<table>
+    <tr>
+        <td>*db_socket*</td>
+        <td>*db_file*</td>
+        <td>*db_host*</td>
+        <td>*db_userame*</td>
+        <td>*db_name*</td>
+        <td>*db_password*</td>
+        <td>*db_autocommit*</td>
+        <td>*db_prefix*</td>
+    </tr>
+    
+    <tr>
+        <td>mysql</td>
+        <td></td>
+        <td>localhost</td>
+        <td>panthera</td>
+        <td>example_app</td>
+        <td>test123</td>
+        <td>1</td>
+        <td>pa_</td>
+    </tr>
+    
+    <tr>
+        <td>sqlite3</td>
+        <td>db.sqlite3</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>1</td>
+        <td>pa_</td>
+    </tr>
+</table>
+
 ## Queries
 
 Database queries are simplified as much as possible, so we have only one function that handles query and it's optional values.
