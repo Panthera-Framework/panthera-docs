@@ -49,7 +49,7 @@ var_dump(localize('Welcome to my first website based on Panthera Framework', 'we
 
 You can also use langtool from Admin Panel to translate strings.
 
-## Translating strings containing dynamic data
+## Strings containing dynamic data eg. _You have %s messages_
 
 ```html
 {$user="John"}
