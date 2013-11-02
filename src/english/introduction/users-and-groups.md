@@ -15,6 +15,9 @@ $u = new pantheraUser('login', 'myuser');
 
 #### Changing password
 
+changePassword function is automaticaly adding salt and hashing input password with selected algorithm in Panthera configuration.
+Avaliable hashing algorithms are blowfish, md5 and sha512.
+
 ```php
 $u -> changePassword('test123');
 
