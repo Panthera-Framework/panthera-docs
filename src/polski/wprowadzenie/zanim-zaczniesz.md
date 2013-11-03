@@ -60,7 +60,7 @@ Damian Kęska
 
 ### Skrypt CGI
 
-Jeśli nie posiadasz dostępu do konsoli albo nie cierpisz patrzyć się w ciągi nic nie mówiących znaków, możesz wszystkie testować w trybie CGI.
+Jeśli nie posiadasz dostępu do konsoli albo nie cierpisz patrzyć się w ciągi nic nie mówiących znaków, możesz wszystko testować w trybie CGI.
 Dobrym rozwiązaniem do testowania w trybie CGI jest stworzenie front-controllera w katalogu głównym aplikacji Panthery.
 
 ```php
