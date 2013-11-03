@@ -3,6 +3,47 @@ Bazy danych
 
 Używamy objektów danych PHP (PDO) do wykonywania połączeń z bazą danych. Każdy wynik jest zwracany jako object PDO, więc jeśli miałeś jakąkolwiek styczność z tą biblioteką nie powinieneś mieć problemu ze zrozumieniem jak działa `pantheraDB`.
 
+## Konfiguracja
+
+Konfiguracja bazy danych jest umieszczona w pliku `app.php`. Obecnie Panthera wspiera sockety SQLite3 i MySQL poprzez PDO - jeśli jesteś zainteresowany portowaniem Panthery dla innych typów baz danych, czekamy na pull request. ;)
+
+Przykład konfiguracji:
+
+<table>
+    <tr>
+        <td><b>db_socket</b></td>
+        <td><b>db_file</b></td>
+        <td><b>db_host</b></td>
+        <td><b>db_userame</b></td>
+        <td><b>db_name</b></td>
+        <td><b>db_password</b></td>
+        <td><b>db_autocommit</b></td>
+        <td><b>db_prefix</b></td>
+    </tr>
+    
+    <tr>
+        <td>mysql</td>
+        <td></td>
+        <td>localhost</td>
+        <td>panthera</td>
+        <td>example_app</td>
+        <td>test123</td>
+        <td>1</td>
+        <td>pa_</td>
+    </tr>
+    
+    <tr>
+        <td>sqlite3</td>
+        <td>db.sqlite3</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>1</td>
+        <td>pa_</td>
+    </tr>
+</table>
+
 ## Kolejki
 
 Zapytania do bazy danych są tak uproszczone jak to tylko było możliwe. Posiadamy tylko jedną funkcję do wykonywania zapytań.
@@ -145,4 +186,76 @@ CREATE TABLE `{$db_prefix}var_cache` (
   `expire` int(20) NOT NULL,
   UNIQUE KEY `var` (`var`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+```
+
+# Objekty danych - pantheraFetchDB
+
+`pantheraFetchDB` jest klasą, która pozwala zwrócić rekord bazy danych w odczytywalnym dla PHP objekcie.
+Warte uwagi jest również to, że wszystkie objekty bazowane na tej klasie wspierają cachowanie, które poprawia wydajność, ale może powodować tworzenie problemów jeśli ktoś tego użycje bez odpowiedniej wiedzy.
+
+## Konwertowanie tablic w objekty
+
+Aby umożliwić konwertowanie rekordów baz danych w objekty *musisz stworzyć klasę* poszerzoną o `pantheraFetchDB`.
+
+```php
+class panel extends pantheraFetchDB
+{
+    protected $_tableName = 'panels'; // tutaj jest nazwa tableli bez przedrostka
+    protected $_idColumn = 'id'; // `id` kolumny tej tabeli
+    protected $_constructBy = array('id', 'array', 'title'); // pozwala skonstruować kolumny poprzez `id` i `title` przy użyciu tablicy z wartościami
+}
+```
+
+Powyższy przykład jest bardzo prosty, definiujemy nazwę tabeli, unikalne `id` kolumny i listę kolumn które mogą być wykorzystane do stworzenia objektu.
+`array` jest nie tylko kolumną, ale także metodą konstruowania objektu. Z tą metodą możesz konstruować objekt podając tylko tablicę wszystkich kolumn i wartości. Jest to bardzo pomocne przy wykonywaniu szerokiego wybierania w tabeli, a następnie konstruowania objektu poprzez podanie tablicy z wartościami pobranymi z bazy danych.
+
+```php
+$panel = new panel('id', 1);
+
+// lub
+$panel = new panel('title', 'To jest panel');
+
+// i poprzez tablicę
+$q = $panthera -> db -> query('SELECT * FROM `{$db_prefix}panels` WHERE `id` = 1');
+$data = $q -> fetch(PDO::FETCH_ASSOC);
+
+$panel = new panel('array', $data);
+
+var_dump($panel -> exists());
+```
+
+#### Sprawdzanie czy objekt istnieje
+
+Bardzo ważną rzeczą w `pantheraFetchDB` jest sprawdzanie czy objekt istnieje. Specjalnie stworzyliśmy odpowiednią funkcję do tego.
+
+```php
+if ($panel -> exists())
+{
+    // zrób coś
+}
+```
+
+Jeśli nie sprawdzimy, czy objekt został zainicjowany poprawnie, możemy dostać błąd krytyczny lub niespodziewane rezultaty.
+
+#### Pobieranie tablicy objektów np. listy użytkowników
+
+Tutaj jest przykład:
+
+```php
+$by = new whereClause;
+$by -> add('', 'login', '=', 'Jan');
+
+// lub poprzez tablicę (ale to zawiera tylko operator "AND" w zapytaniu SQL)
+# $by = array('login' => 'Jan');
+
+$rows = $panthera -> db -> getRows('users', $by, 10, 0, 'pantheraUser', 'id', 'DESC');
+
+// Argumenty
+// 'users' - szukamy w tabeli `{$db_prefix}users`
+// $by - gdzie wyrażeniem może być `profile_picture` != ''
+// 10 - Limit SQL (pokazuje tylko 10 użytkowników)
+// 0 - offset (startujemy z tej pozycji)
+// 'pantheraUser' - zwraca rezultaty jako objekt klasy (spróbuj skonstruować to poprzez metodę `array`)
+// 'id' - column to order by
+// 'DESC' - kierunek sortowania
 ```
