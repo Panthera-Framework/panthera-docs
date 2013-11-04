@@ -17,7 +17,7 @@ Szybki start
         4. [Przetworzone adresy URL](https://github.com/Panthera-Framework/panthera-docs/blob/master/src/polski/wprowadzenie/szablony.md#obsluga-w-php)
     5. [Bazy danych](https://github.com/Panthera-Framework/panthera-docs/blob/master/src/polish/wprowadzenie/baza-danych.md)
     6. [Zarządzanie cache](https://github.com/Panthera-Framework/panthera-docs/blob/master/src/polish/wprowadzenie/cache.md)
-    7. Języki i ich obsługa
+    7. [Języki i ich obsługa](https://github.com/Panthera-Framework/panthera-docs/blob/master/src/polish/wprowadzenie/jezyki.md)
     8. Zarządzanie użytkownikami oraz grupami
 
 3. Tworzenie konsolowej aplikacji Panthery z wykorzystaniem pantheraCLI
