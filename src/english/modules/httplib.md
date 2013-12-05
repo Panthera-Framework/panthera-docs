@@ -12,14 +12,32 @@ var_dump($contents);
 
 ### POST
 
+Post method can be very useful to login to a website that requires authentication, object will store all cookies set by website.
+
 ```php
 $http = new httplib;
 
 $fields = array(
-    'name' => 'Jan',
-    'surname' => 'Kowalski'
+    'login' => 'hacker',
+    'password' => '123'
 );
 
-$contents = $http -> post('http://example.com', $fields);
-var_dump($contents);
+// object will store cookies if website will create any
+$contents = $http -> post('http://example.com/login.php', $fields);
+
+// ... parse data from $contents, create $session ...
+
+// download a file that requires login
+$file = $http -> get('http://example.com/filedownload.php?fid=542343514663&sid=' .$session);
+```
+
+### Using proxy server
+
+httplib is able to send request through a proxy server as cURL do. Supported proxy server types are socks4, socks5 and http.
+
+```php
+$http = new httplib;
+$http -> setProxy('127.0.0.1', 3128); // public http proxy
+$http -> setProxy('127.0.0.1', 3128, 'http', 'user:password'); // proxy with authentication
+$http -> setProxy('127.0.0.1', 8080, 'socks5'); // socks5 proxy
 ```
