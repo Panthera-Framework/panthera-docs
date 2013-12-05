@@ -46,4 +46,5 @@ $http -> setProxy('127.0.0.1', 8080, 'socks5'); // socks5 proxy
 
 ```php
 $http -> timeout = 6; // set request timeout to 6 seconds
+httplib::userAgent = 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/32.0.1667.0 Safari/537.36';
 ```
