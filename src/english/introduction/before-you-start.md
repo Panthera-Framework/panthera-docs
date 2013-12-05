@@ -75,3 +75,106 @@ if ($_SERVER['REMOTE_ADDR'] != '127.0.0.1')
 $u = new pantheraUser('login', 'webnull');
 print_r($u->getName());
 ```
+
+### Debugging variables
+
+There are some functions built-in Panthera and PHP core library for easy debugging.
+
+#### Printing arrays, strings, ints, object variables
+
+```php
+php> $a = 'test';
+
+php> var_dump($a);
+string(4) "test"
+
+php> $b = array('a' => 1, 'b' => 2);
+
+php> var_dump($b);
+array(2) {
+  ["a"]=>
+  int(1)
+  ["b"]=>
+  int(2)
+}
+
+php> $a = r_dump($b); // save var_dump output to $a
+```
+
+#### Getting list of object/class functions
+
+```php
+php> object_info('pantheraAutoloader');
+/**
+  * Rebuild autoloader database                                                                                                                      
+  *                                                                                                                                                  
+  * @package Panthera\modules\autoloader.tools                                                                                                       
+  * @author Damian Kęska                                                                                                                             
+  */                                                                                                                                                 
+Class [ <user> class pantheraAutoloader ] {                                                                                                          
+  @@ /home/webnull/public_html/panthera/lib/modules/autoloader.tools.module.php 17-117                                                               
+
+  - Constants [0] {                                                                                                                                  
+  }                                                                                                                                                  
+
+  - Static properties [0] {                                                                                                                          
+  }                                                                                                                                                  
+
+  - Static methods [2] {                                                                                                                             
+    /**                                                                                                                                              
+      * Panthera autoloader cache update cronjob                                                                                                     
+      *                                                                                                                                              
+      * @param string $data                                                                                                                          
+      * @return mixed                                                                                                                                
+      * @author Damian Kęska                                                                                                                         
+      */                                                                                                                                             
+    Method [ <user> static public method updateCache ] {                                                                                             
+      @@ /home/webnull/public_html/panthera/lib/modules/autoloader.tools.module.php 27 - 76                                                          
+
+      - Parameters [1] {                                                                                                                             
+        Parameter #0 [ <optional> $data = '' ]                                                                                                       
+      }                                                                                                                                              
+    }                                                                                                                                                
+
+    /**                                                                                                                                              
+      * Get list of declared class in PHP file (without including it)
+      *
+      * @param string $fileName
+      * @return array 
+      * @author AbiusX <http://stackoverflow.com/questions/7153000/get-class-name-from-file>
+      */
+    Method [ <user> static public method fileGetClasses ] {
+      @@ /home/webnull/public_html/panthera/lib/modules/autoloader.tools.module.php 86 - 116
+
+      - Parameters [1] {
+        Parameter #0 [ <required> $fileName ]
+      }
+    }
+  }
+
+  - Properties [0] {
+  }
+
+  - Methods [0] {
+  }
+}
+
+
+php> 
+```
+
+#### Printing arrays
+
+```php
+php> $a = array(1, 2, 3, 4, 5);
+
+php> print_r($a);
+Array
+(
+    [0] => 1
+    [1] => 2
+    [2] => 3
+    [3] => 4
+    [4] => 5
+)
+```
