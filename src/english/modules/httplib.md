@@ -41,3 +41,9 @@ $http -> setProxy('127.0.0.1', 3128); // public http proxy
 $http -> setProxy('127.0.0.1', 3128, 'http', 'user:password'); // proxy with authentication
 $http -> setProxy('127.0.0.1', 8080, 'socks5'); // socks5 proxy
 ```
+
+### Configuration variables
+
+```php
+$http -> timeout = 6; // set request timeout to 6 seconds
+```
