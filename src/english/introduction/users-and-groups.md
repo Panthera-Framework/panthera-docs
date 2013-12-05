@@ -11,7 +11,11 @@ $u = new pantheraUser('id', 1);
 
 ```php
 $u = new pantheraUser('login', 'myuser');
+var_dump($u -> login);
+var_dump($u -> full_name);
 ```
+
+**# NOTE: login and full_name are database table columns**
 
 #### Changing password
 
