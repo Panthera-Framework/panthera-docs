@@ -7,7 +7,7 @@ So, there are two methods depending on what you preffer and what you are able to
 ### phpsh - PHP Shell
 
 phpsh is a great interactive PHP console created by Facebook developers, and works just like Python console.
-In Panthera we are using it very often to maintain our Panthera based websites and for test cases. It allows you eg. change user's password with a single command.
+In Panthera we are using it very often to maintain our Panthera based websites and for test cases. It allows eg. to change user's password with a single command.
 
 To start using phpsh you must first install it, I assume you'r OS package manager don't have it in repositories, so we are going to clone it from GIT.
 
