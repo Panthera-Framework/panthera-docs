@@ -22,7 +22,7 @@ pecl install pcntl
 Now you can navigate to you'r Panthera application's root directory and execute:
 
 ```bash
-# phpsh _phpsh.php
+phpsh _phpsh.php
 ```
 
 ```bash
