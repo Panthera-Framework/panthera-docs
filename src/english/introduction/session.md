@@ -3,9 +3,11 @@ Session
 
 Every visitor of your website is using a session and cookies to store temporary data, eg. search results or history.
 
-pantheraSession is operating on PHP's standard sessions and cookies mechanisms, but it's a lot easier to do than in plain PHP, and of course it's possible to move all cookies to any external storage.
+pantheraSession is operating on PHP's standard sessions and cookies mechanisms, interface is a lot easier to do than in plain PHP, and of course it's possible to move all cookies to any external storage.
 
 #### Example of operating on sessions
+
+Session management is operating on $_SESSION variable by default, it is important not to do this manually as pantheraSessinon is also taking care about possible errors and session security.
 
 ```php
 // define a variable "name" and set it's value to string type "John"
@@ -26,6 +28,8 @@ $panthera -> session -> remove('name');
 
 #### Cookies example usage
 
+Cookies are stored in user's browser. Please note that user is able to manage cookies itself, so it's not a secure method to store sensitive informations such as passwords, complete authentication data.
+
 ```php
 // set a cookie
 $panthera -> session -> cookies -> set('name', 'John', time()+60); // set a cookie "name" => "John" for 60 seconds
@@ -39,6 +43,9 @@ $panthera -> session -> cookies -> remove('name');
 // get all cookies (returns array)
 var_dump($panthera -> session -> cookies -> getAll());
 ```
+
+pantheraCookie also provides a possibility to encrypt user-stored cookies using 256 bit AES in CBC mode.
+To enable AES encryption please set `cookie_encrypt` variable to `1`.
 
 #### Browser detection
 
