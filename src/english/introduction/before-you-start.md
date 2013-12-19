@@ -1,7 +1,7 @@
 Before you start
 ================
 
-Before you start learning how everything works it's good to have any knowledge on how to test it's all.
+Before you start learning how everything works it's good to have any knowledge on how to test all examples from this simple "handbook".
 So, there are two methods depending on what you preffer and what you are able to run.
 
 ### phpsh - PHP Shell
@@ -54,13 +54,13 @@ Loaded meta overlay, counting overall 5 elements
 Wrote meta to cache id=meta.u.6
 query( SELECT * FROM `pa_metas` WHERE `type` = :type AND `userid` = :objectID , {"type":"g","objectID":"users"} )
 Wrote to cache id=meta.overlay.g.users
-php> print_r($u -> getName());
+php> print($u -> getName());
 Damian Kęska
 ```
 
 ### As CGI script
 
-If you don't have access to shell, or you don't like terminal you can test everything in CGI mode.
+If you don't have a shell access, or you don't like terminal you can test everything in CGI mode.
 A good solution to test in CGI mode is to create a front controller in main directory of your application.
 
 ```php
