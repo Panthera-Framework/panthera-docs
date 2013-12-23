@@ -20,6 +20,7 @@ Getting started
     7. [Cache management](https://github.com/Panthera-Framework/panthera-docs/blob/master/src/english/introduction/cache.md)
     8. [Languages](https://github.com/Panthera-Framework/panthera-docs/blob/master/src/english/introduction/languages.md)
     9. [Users and groups management](https://github.com/Panthera-Framework/panthera-docs/blob/master/src/english/introduction/users-and-groups.md)
+    10. [Sessions and cookies](https://github.com/Panthera-Framework/panthera-docs/blob/master/src/english/introduction/session.md)
 
 3. Creating Panthera shell application using pantheraCLI
     1. Application skeleton with Hello World example
