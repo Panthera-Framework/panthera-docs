@@ -6,7 +6,9 @@ The first one is placed as hardcoded PHP array in app.php that is automaticaly g
 There is also an overlay that covers array from app.php and adds new variables.
 Overlay is placed in SQLite or MySQL database and is divided into sections to avoid loading thousands of unneeded variables.
 
-###Example app.php
+_**Note for PHPSH users:** You need to maunally invoke $panthera -> config -> save() to move changes to database and/or cache._
+
+### Example app.php
 
 ```php
 $config = array (
