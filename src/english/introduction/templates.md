@@ -22,6 +22,8 @@ All Panthera templates are stored in `/lib/templates` and `/content/templates`. 
 Template webroot directory contains all files that may be copied to application root directory (directory where are placed public files like index.php).
 Best practice is to keep this directory clean, so the CSS styles should be in their "css" directory, javascript and images also should be separated.
 
+[For more details please visit libtemplate module documentation.](https://github.com/Panthera-Framework/panthera-docs/blob/master/src/english/modules/libtemplate.md)
+
 ## Practical usage
 
 Basic usage of template system is to assign variables and just... display it. But of course in Panthera we have scripts, styles, meta tags management.
