@@ -45,3 +45,73 @@ libtemplate::webrootMerge(array('example' => True));
         <td>Set allways to true to exclude a template</td>
     </tr>
 </table>
+
+#### listTemplates
+
+Listing template files or getting list of all avaliable templates from /lib and /content.
+
+```php
+php> print_r(libtemplate::listTemplates());
+Requested libtemplate class
+Imported "libtemplate" from /lib/modules
+Array
+(
+    [_libs_webroot] => Array
+        (
+            [item] => /var/www/public_html/panthera/lib/templates/_libs_webroot
+            [place] => lib
+        )
+
+    [_system] => Array
+        (
+            [item] => /var/www/public_html/panthera/lib/templates/_system
+            [place] => lib
+        )
+
+    [admin] => Array
+        (
+            [item] => /var/www/public_html/darbs-tools/content/templates/admin
+            [place] => content
+        )
+
+    [admin_mobile] => Array
+        (
+            [item] => /var/www/public_html/panthera/lib/templates/admin_mobile
+            [place] => lib
+        )
+
+    [installer] => Array
+        (
+            [item] => /var/www/public_html/panthera/lib/templates/installer
+            [place] => lib
+        )
+
+    [example] => Array
+        (
+            [item] => /var/www/public_html/darbs-tools/content/templates/example
+            [place] => content
+        )
+
+)
+```
+
+```php
+php> print_r(libtemplate::listTemplates('admin'));
+Array
+(
+    [_popup_jsonedit.tpl] => Array
+        (
+            [item] => /var/www/public_html/panthera/lib/templates/admin/templates/_popup_jsonedit.tpl
+            [place] => lib
+        )
+
+    (...)
+
+    [users_account.tpl] => Array
+        (
+            [item] => /var/www/public_html/panthera/lib/templates/admin/templates/users_account.tpl
+            [place] => lib
+        )
+
+)
+```
