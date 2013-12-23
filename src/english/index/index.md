@@ -33,4 +33,10 @@ Getting started
     8. Massive data parsing with pantheraWorker
 
 4. Base libraries
-    1. httplib - HTTP connections
+    1. [autoloader - Panthera Autoloader tools](https://github.com/Panthera-Framework/panthera-docs/blob/master/src/english/modules/autoloader.tools.md)
+    2. [httplib - HTTP connections](https://github.com/Panthera-Framework/panthera-docs/blob/master/src/english/modules/httplib.md)
+    3. [libtemplate - Additional template tools](https://github.com/Panthera-Framework/panthera-docs/blob/master/src/english/modules/libtemplate.md)
+    4. [rwjson - Writable JSON object](https://github.com/Panthera-Framework/panthera-docs/blob/master/src/english/modules/rwjson.md)
+    5. [googlepr - Google PageRank checker](https://github.com/Panthera-Framework/panthera-docs/blob/master/src/english/modules/googlepr.md)
+    6. [scm - Source Control Management client](https://github.com/Panthera-Framework/panthera-docs/blob/master/src/english/modules/scm.md)
+
