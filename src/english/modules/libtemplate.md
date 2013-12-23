@@ -50,6 +50,8 @@ libtemplate::webrootMerge(array('example' => True));
 
 Listing template files or getting list of all avaliable templates from /lib and /content.
 
+##### Listing all avaliable themes from /content and /lib (templates)
+
 ```php
 php> print_r(libtemplate::listTemplates());
 Requested libtemplate class
@@ -94,6 +96,8 @@ Array
 
 )
 ```
+
+##### Listing template files (.tpl files) for "admin" theme
 
 ```php
 php> print_r(libtemplate::listTemplates('admin'));
