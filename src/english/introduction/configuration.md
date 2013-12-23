@@ -86,6 +86,8 @@ $panthera -> config -> loadOverlay('dash');
 var_dump($panthera -> config -> getKey('dash.maxItems'));
 ```
 
+_**PLEASE NOTE:** You need to load section overlay before trying to read key._
+
 <table>
     <tr>
         <td>id</td>
