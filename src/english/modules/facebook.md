@@ -38,7 +38,7 @@ Facebook API isn't enough fast to call it everytime, sometimes we can just save 
 So, every API call supports caching, it's just an additional boolean argument to api() method.
 
 ```php
-
+// check if we have already serialized state of FacebookWrapper object somewhere in the user session
 if ($panthera -> session -> exists('facebookCache'))
 {
     $facebook = new FacebookWrapper('', '', $panthera -> session -> get('facebookCache'));
@@ -46,6 +46,7 @@ if ($panthera -> session -> exists('facebookCache'))
     $facebook = new FacebookWrapper;
     $facebook -> loginUser(array('publish_stream', 'user_likes'), 'header', 'http://mywebsite.org/login');
 }
+
 $facebook -> api('/me', True); // we don't want to download user personal informations every page refresh, it can be downloaded once, huh?
 $cache = $facebook -> serializeState(); // this is a serialized FacebookWrapper data, it can be stored everywhere now
 $panthera -> session -> set('facebookCache', $cache);
