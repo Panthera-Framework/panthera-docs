@@ -21,8 +21,15 @@ Getting started
     8. [Languages](https://github.com/Panthera-Framework/panthera-docs/blob/master/src/english/introduction/languages.md)
     9. [Users and groups management](https://github.com/Panthera-Framework/panthera-docs/blob/master/src/english/introduction/users-and-groups.md)
     10. [Sessions and cookies](https://github.com/Panthera-Framework/panthera-docs/blob/master/src/english/introduction/session.md)
+    
+3. Understanding core parts
+    1. Pages on my website (action controllers - ?display=mypage)
+    2. Login (pa-login front controller)
+    3. Extending custom pages action controller
+    4. New user registration
+    5. Creating new settings form in admin panel
 
-3. Creating Panthera shell application using pantheraCLI
+4. Creating Panthera shell application using pantheraCLI
     1. Application skeleton with Hello World example
     2. Handling parsed arguments
     3. Capturing user input
@@ -32,7 +39,7 @@ Getting started
     7. Creating interactive console
     8. Massive data parsing with pantheraWorker
 
-4. Base libraries
+5. Base libraries
     1. [autoloader - Panthera Autoloader tools](https://github.com/Panthera-Framework/panthera-docs/blob/master/src/english/modules/autoloader.tools.md)
     2. [httplib - HTTP connections](https://github.com/Panthera-Framework/panthera-docs/blob/master/src/english/modules/httplib.md)
     3. [libtemplate - Additional template tools](https://github.com/Panthera-Framework/panthera-docs/blob/master/src/english/modules/libtemplate.md)
