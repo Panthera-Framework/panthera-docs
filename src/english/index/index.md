@@ -39,4 +39,4 @@ Getting started
     4. [rwjson - Writable JSON object](https://github.com/Panthera-Framework/panthera-docs/blob/master/src/english/modules/rwjson.md)
     5. [googlepr - Google PageRank checker](https://github.com/Panthera-Framework/panthera-docs/blob/master/src/english/modules/googlepr.md)
     6. [scm - Source Control Management client](https://github.com/Panthera-Framework/panthera-docs/blob/master/src/english/modules/scm.md)
-
+    7. [facebook] (https://github.com/Panthera-Framework/panthera-docs/blob/master/src/english/modules/facebook.md)
