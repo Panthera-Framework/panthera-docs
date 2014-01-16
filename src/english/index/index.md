@@ -23,7 +23,7 @@ Getting started
     10. [Sessions and cookies](https://github.com/Panthera-Framework/panthera-docs/blob/master/src/english/introduction/session.md)
     
 3. Understanding core parts
-    1. Pages on my website (front and action controllers - ?display=mypage)
+    1. [Pages on my website (front and action controllers - ?display=mypage)](https://github.com/Panthera-Framework/panthera-docs/blob/master/src/english/core-parts/front-and-action-controllers.md)
     2. Login (pa-login front controller)
     3. Extending custom pages action controller
     4. New user registration
