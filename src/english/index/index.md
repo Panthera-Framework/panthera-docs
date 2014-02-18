@@ -21,6 +21,7 @@ Getting started
     8. [Languages](https://github.com/Panthera-Framework/panthera-docs/blob/master/src/english/introduction/languages.md)
     9. [Users and groups management](https://github.com/Panthera-Framework/panthera-docs/blob/master/src/english/introduction/users-and-groups.md)
     10. [Sessions and cookies](https://github.com/Panthera-Framework/panthera-docs/blob/master/src/english/introduction/session.md)
+    11. Generating printable pages
     
 3. Understanding core parts
     1. [Pages on my website (front and action controllers - ?display=mypage)](https://github.com/Panthera-Framework/panthera-docs/blob/master/src/english/core-parts/front-and-action-controllers.md)
