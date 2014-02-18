@@ -16,7 +16,7 @@ Example of template directory structure:
 ```
 
 Now if you created a template file in HTML format and placed it in a printable directory with same name used to display normal page
-you can invoke a page with additional parameter "__print=pdf" or "__print=plain"
+you can invoke a page with additional parameter "\__print=pdf" or "\__print=plain"
 
 ## Manually generating PDF documents
 
