@@ -22,12 +22,13 @@ you can invoke a page with additional parameter "__print=pdf" or "__print=plain"
 
 There is no need to use a GET parameter as there is possibility to maunally invoke static method of printingModule.
 
+**pdf-template.tpl**
 ```html
 <h2>{$document_title}</h2>
 {$description}
 ```
 
-
+**Example PHP code**
 ```php
 $panthera -> template -> push('document_title', 'This is a page title');
 $panthera -> template -> push('description', 'Description');
