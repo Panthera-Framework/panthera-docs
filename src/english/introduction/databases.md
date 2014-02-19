@@ -269,7 +269,7 @@ Lets list all users from database.
 
 ```php
 // print all users from database
-$users = pantheraUser::fetchAll();
+$users = pantheraUser::fetchAll('');
 
 foreach ($users as $user)
 {
