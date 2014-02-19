@@ -189,6 +189,31 @@ CREATE TABLE `{$db_prefix}var_cache` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 ```
 
+#### Getting multiple rows from database
+
+Here is an example:
+
+```php
+$by = new whereClause;
+$by -> add('', 'login', '=', 'Jan');
+
+// or by array (but this includes only "AND" operators in SQL query)
+# $by = array('login' => 'Jan');
+
+$rows = $panthera -> db -> getRows('tablename', $by, 10, 0, '', 'id', 'DESC');
+
+// arguments
+// 'users' - it will search in `{$db_prefix}users` table
+// $by - where clause eg. `profile_picture` != ''
+// 10 - SQL limit (show only 10 users)
+// 0 - offset (start from this position)
+// 'blabla' - return results as object of this class (try to construct by `array` method)
+// 'id' - column to order by
+// 'DESC' - sorting direction
+```
+
+getRows function supports also pantheraFetchDB and whereClause based objects. 
+
 # Data objects - pantheraFetchDB
 
 `pantheraFetchDB` is a class that is able to turn database record into editable PHP object.
@@ -238,25 +263,73 @@ if ($panel -> exists())
 
 If we don't check if the object was initialized correctly we may get a critical error or unexpected results.
 
-#### Getting array of objects eg. list of users
+#### Getting multiple rows / searching in database
 
-Here is an example:
+Lets list all users from database.
 
 ```php
-$by = new whereClause;
-$by -> add('', 'login', '=', 'Jan');
+// print all users from database
+$users = pantheraUser::fetchAll();
 
-// or by array (but this includes only "AND" operators in SQL query)
-# $by = array('login' => 'Jan');
+foreach ($users as $user)
+{
+    print($user->getName(). "\n");
+}
 
-$rows = $panthera -> db -> getRows('users', $by, 10, 0, 'pantheraUser', 'id', 'DESC');
-
-// arguments
-// 'users' - it will search in `{$db_prefix}users` table
-// $by - where clause eg. `profile_picture` != ''
-// 10 - SQL limit (show only 10 users)
-// 0 - offset (start from this position)
-// 'pantheraUser' - return results as object of this class (try to construct by `array` method)
-// 'id' - column to order by
-// 'DESC' - sorting direction
 ```
+Now we will search for user that login contains "a"
+
+```php
+$query = new whereClause;
+$query -> add('', 'login', 'LIKE', '%a%');
+
+$users = pantheraUser::fetchAll($query);
+
+foreach ($users as $user)
+{
+    print($user->getName(). "\n");
+}
+```
+
+Isn't it simple?
+
+#### Joining multiple tables
+
+To join any table to class main table you have to define $_joinColumns and $_unsetColumns variables in your class.
+
+**Example**
+
+```php
+protected $_joinColumns = array(
+        array('LEFT JOIN', 'groups', array('group_id' => 'primary_group'), array('name' => 'group_name'))
+);
+
+protected $_unsetColumns = array('group_name');
+```
+
+$_joinColumns is an array of tables to join to our base table (users in this case).
+Inside every table-array there are 4 rows, in the order:
+
+1. LEFT JOIN - sql operation (can be LEFT JOIN, RIGHT JOIN etc.)
+2. groups - table name
+3. array('group_id' => 'primary_group') - Two columns to compare, group_id from "groups" table and primary_group from users table should have same values (in practical way: pa_groups.group_id = pa_users.primary_group) every next row should contain first record with "AND" or "OR" eg. array('group_id' => 'primary_group', 'AND:id' => 'gid')
+4. array('name' => 'group_name') - in this case pa_groups.name will be named "group_name" (just an alias, but required)
+
+
+
+**Code snippet from user.class.php**
+
+```php
+class pantheraUser extends pantheraFetchDB
+{
+    protected $_tableName = 'users';
+    protected $_constructBy = array('id', 'login', 'full_name', 'last_result', 'array');
+    protected $attributes; // on this data we will operate
+    public $acl;
+    protected $_joinColumns = array(
+        array('LEFT JOIN', 'groups', array('group_id' => 'primary_group'), array('name' => 'group_name'))
+    );
+    protected $_unsetColumns = array('created', 'modified', 'mod_time', 'last_result', 'group_name');
+}
+```
+
