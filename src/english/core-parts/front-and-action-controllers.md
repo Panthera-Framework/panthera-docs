@@ -68,5 +68,35 @@ class testAjaxControllerCore extends frontController
 ```
 
 Above code will work under url ?display=test&cat=admin if placed in /content/ajaxpages/admin/test.php
+**Class name should contain "AjaxController" or "AjaxControllerCore".**
 
-Class name should contain "AjaxController" or "AjaxControllerCore".
+#### Handling actions
+
+Actions such as edit, delete, hide content, etc. can be handled by class methods.
+
+If you add a single line $this -> dispatchAction() to your display() function you will be able to create methods with action names.
+
+```php
+(...)
+
+public function createNewAction()
+{
+    // i will be displayed when "action=createNew" GET parameter will appear
+    
+    $this -> panthera -> template -> display('createNewForm.tpl');
+    pa_exit();
+}
+
+public function showAction()
+{
+    // i will be displayed when "action=show" GET parameter will appear
+    ajax_exit(array('status' => 'success', 'result' => 'This is a test'));
+}
+
+public function display()
+{
+    (...)
+    $this -> dispatchAction();
+    (...)
+}
+(...)
