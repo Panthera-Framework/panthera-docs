@@ -21,3 +21,52 @@ include PANTHERA_DIR. '/pages/custom.php';
 ```
 
 It's very stupid and simple but creates a new action controller that directly shows you a selected custom page editable from admin panel.
+
+### Objective action controllers
+
+The best programming practice is to write objective code, in Panthera there are two ways - structural or objective controllers.
+
+Advantages of objective controllers:
+1. Readability
+2. Additional functions built-in class
+3. Any class function can be easily extended by creating new class that extends existing one
+
+Every front controller should contain a display() method, it's like main() in C/C++. In return there should be given a string with rendered HTML code. Another way is to use $this -> template -> display() and pa_exit() functions.
+
+**Example:**
+
+```php
+class testAjaxControllerCore extends frontController
+{
+    // if page will be using ui.Titlebar (it's required in pages created for admin panel)
+    protected $uiTitlebar = array(
+        'Test page', 'languagedomain'
+    );
+    
+    // list of modules we will use in our code (this is optional)
+    protected $requirements = array(
+        'googlepr',
+    );
+    
+    public function doSomething()
+    {
+        if ($this -> panthera -> user)
+        {
+            $this -> panthera -> template -> push('userName', $this -> panthera -> user -> getName());
+        }
+        
+        $this -> panthera -> template -> push('github_rank', GooglePR::getRank('github.com'));
+    }
+
+    // our core function
+    public function display()
+    {
+        $this -> doSomething();
+        return $this -> panthera -> template -> compile('test.tpl');
+    }
+}
+```
+
+Above code will work under url ?display=test&cat=admin if placed in /content/ajaxpages/admin/test.php
+
+Class name should contain "AjaxController" or "AjaxControllerCore".
